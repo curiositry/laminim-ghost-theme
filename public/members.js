@@ -22,7 +22,7 @@ Array.prototype.forEach.call(document.querySelectorAll('form[data-members-form]'
         }
 
         form.classList.add('loading');
-        fetch('https://www.curiositry.com/laminim-ghost-theme/ghost/api/canary/members/send-magic-link/', {
+        fetch('https://www.curiositry.com/laminim-ghost-theme/laminim-ghost-theme/ghost/api/canary/members/send-magic-link/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -71,7 +71,7 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-members-plan]'), f
             errorEl.innerText = '';
         }
         el.classList.add('loading');
-        fetch('https://www.curiositry.com/laminim-ghost-theme/members/ssr', {
+        fetch('https://www.curiositry.com/laminim-ghost-theme/laminim-ghost-theme/members/ssr', {
             credentials: 'same-origin'
         }).then(function (res) {
             if (!res.ok) {
@@ -79,7 +79,7 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-members-plan]'), f
             }
             return res.text();
         }).then(function (identity) {
-            return fetch('https://www.curiositry.com/laminim-ghost-theme/ghost/api/canary/members/create-stripe-checkout-session/', {
+            return fetch('https://www.curiositry.com/laminim-ghost-theme/laminim-ghost-theme/ghost/api/canary/members/create-stripe-checkout-session/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -124,7 +124,7 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-members-signout]')
         event.preventDefault();
         el.classList.remove('error');
         el.classList.add('loading');
-        fetch('https://www.curiositry.com/laminim-ghost-theme/members/ssr', {
+        fetch('https://www.curiositry.com/laminim-ghost-theme/laminim-ghost-theme/members/ssr', {
             method: 'DELETE'
         }).then(function (res) {
             if (res.ok) {
